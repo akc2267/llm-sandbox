@@ -1,0 +1,13 @@
+services:
+  llm-sandbox:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+      - DOCKER_HOST=unix:///var/run/docker.sock
