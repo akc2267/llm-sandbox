@@ -11,3 +11,6 @@ services:
     environment:
       - PYTHONUNBUFFERED=1
       - DOCKER_HOST=unix:///var/run/docker.sock
+      - OLLAMA_HOST=http://host.docker.internal:11434  # This allows Docker to access host machine's Ollama
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # Required for Linux compatibility

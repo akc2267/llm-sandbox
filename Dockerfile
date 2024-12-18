@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-RUN pip install fastapi uvicorn "docker>=6.1.0" requests
+RUN pip install fastapi uvicorn "docker>=6.1.0" requests pydantic
 
 WORKDIR /app
 
